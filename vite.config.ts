@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { createServer } from "./server";
 import { visualizer } from "rollup-plugin-visualizer";
+import { imagetools } from "vite-imagetools";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -30,6 +31,20 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     expressPlugin(),
+    // Optimize images during build
+    imagetools({
+      defaultDirectives: (url) => {
+        // Only optimize images from public directory
+        if (url.searchParams.has('skipOptimization')) {
+          return new URLSearchParams();
+        }
+        return new URLSearchParams({
+          format: 'webp;jpg',
+          quality: '80',
+          w: '1920',
+        });
+      },
+    }),
     // Generate bundle analysis only in production builds
     mode === 'production' && visualizer({
       filename: 'dist/stats.html',

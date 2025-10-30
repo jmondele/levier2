@@ -8,12 +8,26 @@ export default function Index() {
         <div className="flex-1 relative rounded-2xl lg:rounded-r-[48px] overflow-hidden bg-black">
           {/* Background Image */}
           <div className="absolute inset-0">
-            <img
-              src="/2T5A8620.JPEG"
-              alt="Snackers"
-              className="w-full h-full object-cover"
-              fetchPriority="high"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcSet="/2T5A8620-640w.webp 640w, /2T5A8620-1280w.webp 1280w, /2T5A8620-1920w.webp 1920w"
+                sizes="100vw"
+              />
+              <source
+                type="image/jpeg"
+                srcSet="/2T5A8620-640w.jpg 640w, /2T5A8620-1280w.jpg 1280w, /2T5A8620-1920w.jpg 1920w"
+                sizes="100vw"
+              />
+              <img
+                src="/2T5A8620-1920w.jpg"
+                alt="Snackers"
+                className="w-full h-full object-cover"
+                style={{ backgroundImage: 'url(/2T5A8620-blur.jpg)', backgroundSize: 'cover' }}
+                fetchPriority="high"
+                loading="eager"
+              />
+            </picture>
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-60" />
           </div>

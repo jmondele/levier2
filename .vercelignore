@@ -1,0 +1,12 @@
+# Exclude large original images that are not used in production
+# Only optimized images (*.webp, *-640w.jpg, *-1280w.jpg, *-1920w.jpg) are needed
+public/2T5A8620.JPEG
+
+# Exclude optimization script (not needed in deployment)
+optimize-images.mjs
+
+# Exclude development files
+node_modules
+.git
+.claude
+*.log

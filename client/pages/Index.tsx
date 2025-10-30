@@ -12,6 +12,7 @@ export default function Index() {
               src="/2T5A8620.JPEG"
               alt="Snackers"
               className="w-full h-full object-cover"
+              fetchPriority="high"
             />
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-60" />
@@ -144,6 +145,7 @@ export default function Index() {
               src="https://api.builder.io/api/v1/image/assets/TEMP/5e29dd9ac4b7e94504c94e905ee6ec1b7d7e2c0a?width=840"
               alt="Menu"
               className="absolute inset-0 w-full h-full object-cover opacity-70"
+              loading="lazy"
             />
             <div className="absolute bottom-0 right-0 bg-[#0A0B0A] rounded-tl-3xl p-6">
               {/* Decorative rounded edges */}
@@ -200,6 +202,7 @@ export default function Index() {
               src="https://api.builder.io/api/v1/image/assets/TEMP/5ec0305773e1aeaf4e2e22e513ec76a693502020?width=914"
               alt="Reservation"
               className="absolute inset-0 w-full h-full object-cover opacity-70"
+              loading="lazy"
             />
             <div className="absolute bottom-0 right-0 bg-[#0A0B0A] rounded-tl-3xl p-6">
               {/* Decorative rounded edges */}
@@ -256,6 +259,7 @@ export default function Index() {
               src="https://api.builder.io/api/v1/image/assets/TEMP/c817eb199fd1a34bf08440c990fcdbdaecf0d9a9?width=1092"
               alt="Our Restaurant"
               className="absolute inset-0 w-full h-full object-cover opacity-70"
+              loading="lazy"
             />
             <div className="absolute bottom-0 right-0 bg-[#0A0B0A] rounded-tl-3xl p-6">
               {/* Decorative rounded edges */}
